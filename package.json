@@ -1,6 +1,8 @@
 {
   "name": "prettier-detect",
   "version": "1.0.0",
+  "description": "Generate a Prettier config from any JavaScript code",
+  "repository": "nickmccurdy/prettier-detect",
   "author": "Nick McCurdy <nick@nickmccurdy.com> (https://nickmccurdy.com/)",
   "license": "ISC",
   "devDependencies": {
