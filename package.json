@@ -1,0 +1,10 @@
+{
+  "name": "prettier-detect",
+  "version": "1.0.0",
+  "author": "Nick McCurdy <nick@nickmccurdy.com> (https://nickmccurdy.com/)",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  },
+  "prettier": {}
+}
