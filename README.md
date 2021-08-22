@@ -1,6 +1,6 @@
 # create-prettierrc
 
-Create a Prettier config from any JavaScript code
+Create a Prettier config based on the formatting of existing JavaScript code
 
 ## Usage
 

@@ -1,7 +1,7 @@
 {
   "name": "create-prettierrc",
   "version": "1.0.0",
-  "description": "Create a Prettier config from any JavaScript code",
+  "description": "Create a Prettier config based on the formatting of existing JavaScript code",
   "repository": "nickmccurdy/create-prettierrc",
   "author": "Nick McCurdy <nick@nickmccurdy.com> (https://nickmccurdy.com/)",
   "license": "ISC",
