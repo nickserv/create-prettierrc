@@ -5,8 +5,23 @@
   "repository": "nickmccurdy/create-prettierrc",
   "author": "Nick McCurdy <nick@nickmccurdy.com> (https://nickmccurdy.com/)",
   "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": ">=12"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.15.3",
+    "@babel/traverse": "^7.15.0"
+  },
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^27.0.6",
     "prettier": "^2.3.2"
+  },
+  "scripts": {
+    "test": "yarn test:format && yarn test:unit",
+    "test:format": "prettier --check .",
+    "test:unit": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "prettier": {}
 }
