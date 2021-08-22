@@ -1,13 +1,13 @@
-# prettier-detect
+# create-prettierrc
 
-Generate a Prettier config from any JavaScript code
+Create a Prettier config from any JavaScript code
 
 ## Usage
 
 ```js
-import prettierDetect from "prettier-detect";
+import createPrettierrc from "create-prettierrc";
 
-prettierDetect('console.log("Hello, world!")');
+createPrettierrc('console.log("Hello, world!")');
 ```
 
 ```json
