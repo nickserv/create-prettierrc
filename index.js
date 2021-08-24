@@ -59,7 +59,6 @@ export const detectors = {
   // jsxBracketSameLine: boolean;
   // requirePragma: boolean;
   // insertPragma: boolean;
-  // proseWrap: 'always' | 'never' | 'preserve';
   // arrowParens: 'avoid' | 'always';
   endOfLine(text) {
     const crlf = text.split("\r\n").length - 1;
@@ -73,7 +72,6 @@ export const detectors = {
     return result.type;
   },
   // quoteProps: 'as-needed' | 'consistent' | 'preserve';
-  // vueIndentScriptAndStyle: boolean;
 };
 
 export default function createPrettierrc(text) {
