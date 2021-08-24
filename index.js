@@ -4,7 +4,6 @@ import traverseModule from "@babel/traverse";
 const traverse = traverseModule.default;
 
 const parserOptions = {
-  sourceType: "unambiguous",
   plugins: ["jsx"],
 };
 
