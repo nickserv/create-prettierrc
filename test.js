@@ -13,20 +13,32 @@ test("createPrettierrc", () => {
 });
 
 describe("detectors ", () => {
-  test.each([
-    ["semi", false, "alert()"],
-    ["semi", true, "alert();"],
-    ["singleQuote", false, '"string"'],
-    ["singleQuote", false, ""],
-    ["singleQuote", true, "'string'"],
-    ["jsxSingleQuote", true, "<a href=''/>"],
-    ["jsxSingleQuote", false, '<a href=""/>'],
-    ["jsxSingleQuote", false, "<a href={true} />"],
-    ["endOfLine", "lf", "\n"],
-    ["endOfLine", "lf", ""],
-    ["endOfLine", "crlf", "\r\n"],
-    ["endOfLine", "cr", "\r"],
-  ])("%s: %j from %j", (method, expected, code) => {
-    expect(detectors[method](code)).toBe(expected);
+  describe.each(
+    Object.entries({
+      semi: [
+        [false, "alert()"],
+        [true, "alert();"],
+      ],
+      singleQuote: [
+        [false, '"string"'],
+        [false, ""],
+        [true, "'string'"],
+      ],
+      jsxSingleQuote: [
+        [true, "<a href=''/>"],
+        [false, '<a href=""/>'],
+        [false, "<a href={true} />"],
+      ],
+      endOfLine: [
+        ["lf", "\n"],
+        ["lf", ""],
+        ["crlf", "\r\n"],
+        ["cr", "\r"],
+      ],
+    })
+  )("%s", (detector, cases) => {
+    test.each(cases)("%j from %j", (expected, code) => {
+      expect(detectors[detector](code)).toBe(expected);
+    });
   });
 });
