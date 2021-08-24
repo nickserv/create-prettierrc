@@ -14,6 +14,7 @@ createPrettierrc('console.log("Hello, world!")');
 {
   "endOfLine": "lf",
   "jsxSingleQuote": false,
+  "requirePragma": false,
   "semi": true,
   "singleQuote": false
 }
