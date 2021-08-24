@@ -6,6 +6,7 @@ test("createPrettierrc", () => {
     Object {
       "endOfLine": "lf",
       "jsxSingleQuote": false,
+      "requirePragma": false,
       "semi": true,
       "singleQuote": false,
     }
@@ -28,6 +29,11 @@ describe("detectors ", () => {
         [true, "<a href=''/>"],
         [false, '<a href=""/>'],
         [false, "<a href={true} />"],
+      ],
+      requirePragma: [
+        [true, "/** @prettier */"],
+        [true, "/** @format */"],
+        [false, ""],
       ],
       endOfLine: [
         ["lf", "\n"],

@@ -57,8 +57,14 @@ export const detectors = {
   // trailingComma: 'none' | 'es5' | 'all';
   // bracketSpacing: boolean;
   // jsxBracketSameLine: boolean;
-  // requirePragma: boolean;
-  // insertPragma: boolean;
+  requirePragma(text) {
+    return parse(text, parserOptions).comments.some(
+      ({ type, value }) =>
+        type === "CommentBlock" &&
+        value.startsWith("*") &&
+        (value.includes("@prettier") || value.includes("@format"))
+    );
+  },
   // arrowParens: 'avoid' | 'always';
   endOfLine(text) {
     const crlf = text.split("\r\n").length - 1;
