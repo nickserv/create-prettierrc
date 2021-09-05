@@ -1,5 +1,6 @@
 {
   "name": "create-prettierrc",
+  "packageManager": "yarn@3.0.2",
   "version": "1.0.0",
   "description": "Create a Prettier config based on the formatting of existing JavaScript code",
   "repository": "nickmccurdy/create-prettierrc",
