@@ -24,6 +24,8 @@ const semicolonStatementTypes = [
 ];
 
 export const detectors = {
+  // tabWidth: number;
+  // useTabs: boolean;
   semi(text) {
     // TODO: Filter semicolons in literals and comments using node locations
     const semicolonCount = text.split(";").length - 1;
@@ -37,6 +39,7 @@ export const detectors = {
     const doubleQuotes = text.split('"').length - 1;
     return singleQuotes > doubleQuotes;
   },
+  // quoteProps: 'as-needed' | 'consistent' | 'preserve';
   jsxSingleQuote(text) {
     let singleQuotes = 0;
     traverse(parse(text, parserOptions), {
@@ -56,7 +59,8 @@ export const detectors = {
   },
   // trailingComma: 'none' | 'es5' | 'all';
   // bracketSpacing: boolean;
-  // jsxBracketSameLine: boolean;
+  // bracketSameLine: boolean;
+  // arrowParens:  'avoid' | 'always';
   requirePragma(text) {
     return parse(text, parserOptions).comments.some(
       ({ type, value }) =>
@@ -65,7 +69,6 @@ export const detectors = {
         (value.includes("@prettier") || value.includes("@format"))
     );
   },
-  // arrowParens: 'avoid' | 'always';
   endOfLine(text) {
     const crlf = text.split("\r\n").length - 1;
     const cr = text.split("\r").length - 1 - crlf;
@@ -77,7 +80,6 @@ export const detectors = {
     );
     return result.type;
   },
-  // quoteProps: 'as-needed' | 'consistent' | 'preserve';
 };
 
 export default function createPrettierrc(text) {
